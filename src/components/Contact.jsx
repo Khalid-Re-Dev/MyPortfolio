@@ -64,19 +64,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "contact@portfolio.com",
-      href: "mailto:contact@portfolio.com",
+      value: "kh99.wa.bd@gmail.com",
+      href: "mailto:kh99.wa.bd@gmail.com",
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
+      value: "+967736061504",
       href: "tel:+15551234567",
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "New York, NY",
+      value: "Yemen-Hadramout-AL-Mukalla",
       href: "#",
     },
   ]

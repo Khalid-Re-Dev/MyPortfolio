@@ -81,13 +81,13 @@ export default function Contact() {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
+      value: "+967736061504",
       link: "tel:+15551234567",
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Location",
-      value: "New York, NY",
+      value: "Yemen-Hadramout-AL-Mukalla",
       link: "#",
     },
   ]
