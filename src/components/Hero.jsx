@@ -43,13 +43,13 @@ const Hero = () => {
           </div>
 
           {/* Title */}
-          <h1 className="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+          <h1 className={`hero-title text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 ${isRTL ? "text-right" : "text-left"}`}>
             <span className="block">{t("hero.title")}</span>
-            <span className="block text-primary-900 dark:text-accent-300 mt-2">& UI Designer</span>
+            <span className="block text-primary-900 dark:text-accent-300 mt-2">{t("hero.roleAddon")}</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="hero-subtitle text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className={`hero-subtitle text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed ${isRTL ? "text-right" : "text-left"}`}>
             {t("hero.subtitle")}
           </p>
 
@@ -64,7 +64,7 @@ const Hero = () => {
           </div>
 
           {/* Social Links */}
-          <div className="hero-social flex justify-center space-x-6 mb-12">
+          <div className={`hero-social flex justify-center ${isRTL ? "space-x-reverse" : ""} space-x-6 mb-12`}>
             <a
               href="https://github.com"
               target="_blank"

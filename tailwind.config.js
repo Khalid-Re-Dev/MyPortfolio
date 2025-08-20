@@ -2,10 +2,8 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    "src/**/*.{js,ts,jsx,tsx}",
-    "components/**/*.{js,ts,jsx,tsx}",
-    "pages/**/*.{js,ts,jsx,tsx}",
-    "./index.html"
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./index.html",
   ],
   theme: {
     extend: {
@@ -63,6 +61,8 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      fontFamily: {
         arabic: ["Cairo", "sans-serif"],
         english: ["Inter", "sans-serif"],
       },

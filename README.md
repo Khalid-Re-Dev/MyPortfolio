@@ -1,6 +1,6 @@
 # Professional Portfolio Website
 
-A modern, bilingual (Arabic/English) portfolio website built with Next.js, TailwindCSS, and TypeScript. Features include dark/light theme support, authentication, admin dashboard, and analytics tracking.
+A modern, bilingual (Arabic/English) portfolio website built with Vite (React), React Router, TailwindCSS, and an optional Express backend. Features include dark/light theme support, authentication, admin dashboard, and analytics tracking.
 
 ## 🚀 Features
 
@@ -17,45 +17,45 @@ A modern, bilingual (Arabic/English) portfolio website built with Next.js, Tailw
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **Next.js 14** - React framework with App Router
-- **TypeScript** - Type-safe development
+- **Vite + React** - Fast dev server and build tool
+- **React Router** - Client-side routing
+- **TypeScript (optional)** - Type-safe development
 - **TailwindCSS** - Utility-first CSS framework
 - **React Context** - State management for theme, language, and auth
 - **React Toastify** - Toast notifications
 - **Lucide React** - Modern icon library
 
-### Backend
-- **Next.js API Routes** - Serverless API endpoints
+### Backend (optional)
+- **Express (Node.js)** - REST API service (see `backend/`)
 - **JWT** - JSON Web Token authentication
 - **bcryptjs** - Password hashing
-- **Mock Database** - In-memory storage (easily replaceable with real DB)
+- **MongoDB via Mongoose** (configurable)
 
 ## 📦 Installation
 
 1. **Clone the repository**
-   \`\`\`bash
+   ```bash
    git clone <repository-url>
    cd portfolio-website
-   \`\`\`
+   ```
 
 2. **Install dependencies**
-   \`\`\`bash
+   ```bash
    npm install
-   \`\`\`
+   ```
 
-3. **Set up environment variables**
-   \`\`\`bash
-   cp .env.example .env.local
-   \`\`\`
-   Edit `.env.local` with your configuration values.
-
-4. **Run the development server**
-   \`\`\`bash
+3. **Run the development server (frontend)**
+   ```bash
    npm run dev
-   \`\`\`
+   ```
+
+4. **Backend (optional)**
+   ```bash
+   cd backend && npm install && npm start
+   ```
 
 5. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+   Frontend: http://localhost:5173  |  Backend: http://localhost:5000 (default)
 
 ## 🔐 Authentication
 
@@ -82,9 +82,9 @@ The website uses a navy blue and light blue color scheme defined in CSS variable
 
 ### Content
 Update the following files to customize content:
-- `components/providers/language-provider.tsx` - Translations
-- `app/api/projects/route.ts` - Project data
-- `components/sections/about.tsx` - About section content
+- `src/contexts/LanguageContext.jsx` and `src/utils/translations.js` - i18n
+- `src/components/sections/about.tsx` (or `src/components/About.jsx`) - About section content
+- `src/components/Projects.jsx` - Projects data/view
 
 ## 📱 Responsive Design
 
@@ -95,12 +95,8 @@ The website is fully responsive with breakpoints:
 
 ## 🌐 Deployment
 
-### Other Platforms
-The application can be deployed to any platform that supports Next.js:
-- Netlify
-- Railway
-- DigitalOcean App Platform
-- AWS Amplify
+- Static site (Vite build): set Publish Directory to `dist` and Build Command to `npm run build` (Render/Netlify/etc.)
+- Backend (Express): deploy `backend/` as a separate web service (Render/Heroku/Railway). Set CORS and `VITE_API_URL` in frontend.
 
 ## 🔧 Environment Variables
 
@@ -136,19 +132,20 @@ For production, integrate with:
 - XSS protection
 - Rate limiting (recommended for production)
 
-## 🚀 Performance Optimizations
+## 🚀 Performance
 
-- Next.js automatic code splitting
-- Image optimization with Next.js Image component
-- CSS-in-JS with zero runtime overhead
+- Vite automatic code splitting and fast HMR
+- Tailwind JIT
 - Lazy loading for components
 - Optimized bundle size
 
-## 📝 API Endpoints
+## 📝 API (Express, optional)
+
+Base URL: `${VITE_API_URL}` (e.g., https://your-backend.onrender.com)
 
 ### Authentication
 - `POST /api/auth/login` - User login
-- `GET /api/auth/verify` - Token verification
+- `GET /api/auth/me` - Token verification
 
 ### Projects
 - `GET /api/projects` - Get all projects
@@ -187,4 +184,4 @@ The project is actively maintained. Check the changelog for recent updates and n
 
 ---
 
-Built with ❤️ using Next.js and TailwindCSS
+Built with ❤️ using Vite, React, and TailwindCSS

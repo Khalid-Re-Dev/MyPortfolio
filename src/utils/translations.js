@@ -10,6 +10,7 @@ export const translations = {
 
     // Hero Section
     "hero.title": "Front-End Developer",
+    "hero.roleAddon": "& UI Designer",
     "hero.subtitle": "Creating beautiful and functional web experiences with React & TailwindCSS",
     "hero.cta": "View My Work",
     "hero.contact": "Get In Touch",
@@ -69,6 +70,7 @@ export const translations = {
 
     // Hero Section
     "hero.title": "مطور واجهات أمامية",
+    "hero.roleAddon": "ومصمم واجهات UI",
     "hero.subtitle": "إنشاء تجارب ويب جميلة وعملية باستخدام React و TailwindCSS",
     "hero.cta": "اطلع على أعمالي",
     "hero.contact": "تواصل معي",
