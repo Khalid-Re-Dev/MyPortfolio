@@ -11,30 +11,36 @@ export const translations = {
     // Hero Section
     "hero.title": "Front-End Developer",
     "hero.roleAddon": "& UI Designer",
-    "hero.subtitle": "Creating beautiful and functional web experiences with React & TailwindCSS",
+    "hero.subtitle": "Motivated Front-End Developer and final-year IT student. Passionate about AI tools, motion graphics, and UX/UI. Silver Medal awardee for an innovative graduation-project concept.",
     "hero.cta": "View My Work",
     "hero.contact": "Get In Touch",
 
     // About Section
     "about.title": "About Me",
-    "about.subtitle": "Passionate developer with expertise in modern web technologies",
+    "about.subtitle": "Front-End Developer (React, Tailwind CSS, JavaScript) with real-world experience in content-rich websites and analytics-driven improvements.",
     "about.description":
-      "I am a dedicated Front-End Developer with strong foundations in HTML, CSS, JavaScript, React, and TailwindCSS. I specialize in creating responsive, user-friendly web applications that deliver exceptional user experiences.",
+      "Final-year IT student at Ahgaff University. Part-time Technical Officer & Website Manager at Hadhramaut Organization for the Reform of the Inter-Related, and Freelance Front-End Developer for Ahqaf Developmental Foundation. Passionate about AI tools, motion graphics, and UX/UI design.",
     "about.skills": "Technical Skills",
     "about.experience": "Experience",
     "about.achievements": "Key Achievements",
 
     // Projects Section
     "projects.title": "Featured Projects",
-    "projects.subtitle": "A showcase of my recent work and technical expertise",
+    "projects.subtitle": "Selected work showcasing React, Tailwind, analytics integration, and UX-focused delivery",
     "projects.viewDetails": "View Details",
     "projects.techStack": "Tech Stack",
     "projects.duration": "Duration",
     "projects.challenges": "Key Challenges",
 
+    // UI/UX Section (within Projects)
+    "uiux.title": "UI/UX Case Studies",
+    "uiux.subtitle": "Selected interface and experience designs crafted in Figma",
+    "uiux.viewFigma": "View Figma",
+    "uiux.viewShots": "Preview Shots",
+
     // Contact Section
     "contact.title": "Get In Touch",
-    "contact.subtitle": "Let's discuss your next project",
+    "contact.subtitle": "Available for freelance and part-time opportunities. Based in Mukalla, Hadhramaut, Yemen",
     "contact.name": "Name",
     "contact.email": "Email",
     "contact.message": "Message",
@@ -71,26 +77,32 @@ export const translations = {
     // Hero Section
     "hero.title": "مطور واجهات أمامية",
     "hero.roleAddon": "ومصمم واجهات UI",
-    "hero.subtitle": "إنشاء تجارب ويب جميلة وعملية باستخدام React و TailwindCSS",
+    "hero.subtitle": "مطور واجهات أمامية وطالب سنة أخيرة في تقنية المعلومات. شغوف بأدوات الذكاء الاصطناعي والموشن جرافيك وتجربة المستخدم. حاصل على الميدالية الفضية لمشروع تخرج مبتكر.",
     "hero.cta": "اطلع على أعمالي",
     "hero.contact": "تواصل معي",
 
     // About Section
     "about.title": "نبذة عني",
-    "about.subtitle": "مطور شغوف بخبرة في تقنيات الويب الحديثة",
+    "about.subtitle": "مطور واجهات أمامية (React و TailwindCSS و JavaScript) بخبرة عملية في مواقع المحتوى وتحسينات مبنية على التحليلات.",
     "about.description":
-      "أنا مطور واجهات أمامية مخصص مع أسس قوية في HTML و CSS و JavaScript و React و TailwindCSS. أتخصص في إنشاء تطبيقات ويب متجاوبة وسهلة الاستخدام تقدم تجارب مستخدم استثنائية.",
+      "طالب سنة أخيرة بتقنية المعلومات في جامعة الأحقاف. موظف جزئي كمسؤول تقني ومدير موقع في منظمة حضرموت للإصلاح الدولي، ومطور واجهات مستقل لمؤسسة الأحقاف التنموية. شغوف بأدوات الذكاء الاصطناعي والموشن جرافيك وتجربة المستخدم.",
     "about.skills": "المهارات التقنية",
     "about.experience": "الخبرة",
     "about.achievements": "الإنجازات الرئيسية",
 
     // Projects Section
     "projects.title": "المشاريع المميزة",
-    "projects.subtitle": "عرض لأعمالي الحديثة وخبرتي التقنية",
+    "projects.subtitle": "أعمال مختارة تبرز React و Tailwind والتكامل مع التحليلات والتركيز على تجربة المستخدم",
     "projects.viewDetails": "عرض التفاصيل",
     "projects.techStack": "التقنيات المستخدمة",
     "projects.duration": "المدة",
     "projects.challenges": "التحديات الرئيسية",
+
+    // UI/UX Section (within Projects)
+    "uiux.title": "دراسات حالة UI/UX",
+    "uiux.subtitle": "واجهات وتجارب مستخدم مصممة على فيقما باحتراف",
+    "uiux.viewFigma": "عرض على Figma",
+    "uiux.viewShots": "معاينة الصور",
 
     // Contact Section
     "contact.title": "تواصل معي",

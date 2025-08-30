@@ -36,7 +36,7 @@ const Projects = () => {
 
   const projects = [
     {
-      id: 1,
+      id: 100,
       title: "Best On Click",
       shortDescription: "E-commerce platform with modern UI and seamless user experience",
       fullDescription:
@@ -70,7 +70,7 @@ const Projects = () => {
       ],
     },
     {
-      id: 2,
+      id: 101,
       title: "Editopia",
       shortDescription: "Advanced text editor with collaborative features and real-time editing",
       fullDescription:
@@ -104,7 +104,7 @@ const Projects = () => {
       ],
     },
     {
-      id: 3,
+      id: 102,
       title: "Level Devil Game",
       shortDescription: "Interactive web-based game with engaging gameplay and smooth animations",
       fullDescription:
@@ -138,7 +138,7 @@ const Projects = () => {
       ],
     },
     {
-      id: 4,
+      id: 103,
       title: "Food Delivery App",
       shortDescription: "Full-stack food delivery platform with real-time tracking and payments",
       fullDescription:
@@ -169,6 +169,220 @@ const Projects = () => {
         "Implemented location-based services",
         "Mastered real-time data synchronization",
         "Developed complex state management",
+      ],
+    },
+    {
+      id: 1,
+      title: "Authority Website Management",
+      shortDescription: "Managed and maintained the official authority website with analytics-driven improvements",
+      fullDescription:
+        "Part-time Technical Officer & Website Manager at Hadhramaut Organization for the Reform of the Inter-Related. Ensured high availability, updated content, and implemented front-end features to improve UX. Analyzed traffic to inform multilingual content decisions.",
+      techStack: ["HTML5", "CSS3", "JavaScript", "Analytics"],
+      duration: "Apr 2025 – Present",
+      challenges: [
+        "Keeping content up-to-date across multiple languages",
+        "Improving UX while maintaining availability",
+        "Analyzing 21K+ weekly requests across 10+ countries",
+      ],
+      image: "/placeholder.svg?height=300&width=500",
+      liveUrl: "#",
+      githubUrl: "",
+      category: "Website Management",
+      featured: true,
+      designConsiderations: [
+        "Multilingual content strategy",
+        "Accessible UI patterns",
+        "Performance-conscious updates",
+        "Mobile-first responsiveness",
+      ],
+      backendTech: ["N/A"],
+      frontendTech: ["HTML", "CSS", "JavaScript"],
+      insights: [
+        "Introduced analytics to guide content decisions",
+        "Improved information architecture",
+        "Established content update workflows",
+      ],
+    },
+    {
+      id: 2,
+      title: "Foundation Web Platform",
+      shortDescription: "Responsive site for projects, events, and donation portals with basic analytics",
+      fullDescription:
+        "Freelance Front-End Developer for Ahqaf Developmental Foundation. Built interactive components and responsive layouts to showcase projects and events, integrated forms and basic analytics to track engagement.",
+      techStack: ["React", "TailwindCSS", "JavaScript", "Forms", "Analytics"],
+      duration: "Apr 2025 – Present",
+      challenges: [
+        "Designing for content scalability",
+        "Ensuring fast load on low-bandwidth",
+        "Integrating forms and analytics reliably",
+      ],
+      image: "/placeholder.svg?height=300&width=500",
+      liveUrl: "#",
+      githubUrl: "",
+      category: "Nonprofit",
+      featured: true,
+      designConsiderations: [
+        "Clear information hierarchy",
+        "Accessible color contrast",
+        "Mobile-first layout",
+        "Trust and donation-focused UI",
+      ],
+      backendTech: ["WordPress (hosting)", "Forms", "Analytics"],
+      frontendTech: ["React", "TailwindCSS", "JavaScript"],
+      insights: [
+        "Improved conversions via UX refinements",
+        "Established content publishing workflow",
+        "Enhanced engagement tracking",
+      ],
+    },
+    {
+      id: 3,
+      title: "Graduation Project – Intelligent Web Platform",
+      shortDescription: "Led team to build an intelligent platform; won Silver Medal for innovation in Malaysia",
+      fullDescription:
+        "Led a team to create an intelligent web platform as part of university graduation project. Focus on AI-driven features, user-centric design, and robust frontend implementation.",
+      techStack: ["React", "TailwindCSS", "JavaScript", "AI Concepts"],
+      duration: "Academic Year 2024–2025",
+      challenges: [
+        "Balancing academic deadlines with high-quality delivery",
+        "Designing AI-assisted features with clear UX",
+        "Presenting innovation to competition judges",
+      ],
+      image: "/placeholder.svg?height=300&width=500",
+      liveUrl: "#",
+      githubUrl: "",
+      category: "Academic",
+      featured: true,
+      designConsiderations: [
+        "Clear UX for intelligent features",
+        "Accessible and responsive design",
+        "Performance-conscious interactions",
+        "Structured documentation",
+      ],
+      backendTech: ["Prototype"],
+      frontendTech: ["React", "TailwindCSS", "JavaScript"],
+      insights: [
+        "Iterated quickly with feedback loops",
+        "Explored AI usability patterns",
+        "Strengthened teamwork and leadership",
+      ],
+    },
+    {
+      id: 4,
+      title: "Wasel – Food Delivery App UI",
+      shortDescription: "Energetic UI/UX with clear flows: login, home, categories, product details, and cart.",
+      fullDescription:
+        "Figma-based UI/UX case study for a food delivery app focusing on clarity, speed, and conversion. Uses a vibrant yellow primary with neutral surfaces, card-based restaurant listing, and clear CTA patterns across the journey.",
+      techStack: ["Figma", "Design System", "Prototyping"],
+      duration: "Design Sprint: 1–2 weeks",
+      challenges: [
+        "Designing clear information hierarchy for categories",
+        "Balancing visual energy with readability",
+        "Designing scalable components for listings and cart",
+      ],
+      image: "/uiux/wasel-login.png",
+      liveUrl: "https://www.figma.com/design/cHpjXyVUFMxPN0zI11Umkb/Untitled?node-id=0-1",
+      githubUrl: "",
+      category: "UI/UX Design",
+      featured: true,
+      designConsiderations: [
+        "Mobile-first layout",
+        "Accessible contrast for CTAs",
+        "Card patterns with clear action affordances",
+      ],
+      backendTech: ["N/A"],
+      frontendTech: ["Figma"],
+      insights: [
+        "Improved purchase flow clarity",
+        "Reusable UI tokens and components",
+      ],
+    },
+    {
+      id: 5,
+      title: "SM – Social Media Platform UI (Light & Dark)",
+      shortDescription: "Three‑column layout with post cards and iconized side navigation, fully themed in light and dark.",
+      fullDescription:
+        "UI design exploring readability and density across light/dark themes. Emphasizes clear navigation, scannable post cards, and trend/follow modules with a balanced layout.",
+      techStack: ["Figma", "Design Tokens", "Dark Mode"],
+      duration: "Design Iterations: 1–2 weeks",
+      challenges: [
+        "Contrast and legibility in dark mode",
+        "Component consistency across themes",
+        "Balancing content density with clarity",
+      ],
+      image: "/uiux/sm-desktop-1.png",
+      liveUrl: "https://www.figma.com/design/GVzkXQUupegqMLgIohZj4A/Untitled?node-id=0-1",
+      githubUrl: "",
+      category: "UI/UX Design",
+      featured: false,
+      designConsiderations: [
+        "Typography scales for long-form feeds",
+        "Icon-first navigation",
+        "Responsive grid behavior",
+      ],
+      backendTech: ["N/A"],
+      frontendTech: ["Figma"],
+      insights: [
+        "Refined theme tokens",
+        "Accessible color ramps",
+      ],
+    },
+    {
+      id: 6,
+      title: "JIFF Academy – Learning Platform UI",
+      shortDescription: "Course discovery with filters and informative cards; strong hierarchy and action clarity.",
+      fullDescription:
+        "UI/UX design for an education platform. Home and courses emphasize trust, guidance, and quick scanning. Cards surface key details like teacher, time, and modality to aid selection.",
+      techStack: ["Figma", "Auto Layout", "Prototyping"],
+      duration: "Design Sprint: 1–2 weeks",
+      challenges: [
+        "Presenting dense course info simply",
+        "Designing intuitive filters and tags",
+        "Maintaining visual rhythm across sections",
+      ],
+      image: "/uiux/jiff-home.png",
+      liveUrl: "https://www.figma.com/design/q7XK6TElA5yes2FQGHrb16/Untitled?node-id=0-1",
+      githubUrl: "",
+      category: "UI/UX Design",
+      featured: false,
+      designConsiderations: [
+        "Card layouts for educational content",
+        "Empty state guidance",
+        "Discoverability via clear headings",
+      ],
+      backendTech: ["N/A"],
+      frontendTech: ["Figma"],
+      insights: [
+        "Improved scanability and selection time",
+      ],
+    },
+    {
+      id: 7,
+      title: "HOCF – Charity Organization Homepage",
+      shortDescription: "Trust-building homepage highlighting programs, success stories, stats, and partners.",
+      fullDescription:
+        "Homepage UI for a charity organization focusing on credibility and storytelling. Structured hero, programs grid with icons, success stories, and partner logos to reinforce trust.",
+      techStack: ["Figma", "Grid Systems", "Components"],
+      duration: "Design Iterations: 1 week",
+      challenges: [
+        "Communicating credibility quickly",
+        "Balancing emotion with clarity",
+        "Keeping layout modular for content growth",
+      ],
+      image: "/uiux/hrc-hero.png",
+      liveUrl: "https://www.figma.com/design/c2cGFu1tXiLl0hjeOJjP2G/Untitled?node-id=0-1",
+      githubUrl: "",
+      category: "UI/UX Design",
+      featured: false,
+      designConsiderations: [
+        "Clear information hierarchy",
+        "Consistent cards and iconography",
+        "Responsive grid and spacing",
+      ],
+      backendTech: ["N/A"],
+      frontendTech: ["Figma"],
+      insights: [
+        "Improved donor journey cues",
       ],
     },
   ]
@@ -286,6 +500,8 @@ const Projects = () => {
               </div>
             ))}
           </div>
+
+
         </div>
       </section>
 

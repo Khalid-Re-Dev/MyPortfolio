@@ -54,7 +54,7 @@ const Hero = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <div className={`hero-buttons flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 ${isRTL ? "sm:flex-row-reverse" : ""}`}>
             <button onClick={scrollToProjects} className="btn-primary w-full sm:w-auto">
               {t("hero.cta")}
             </button>

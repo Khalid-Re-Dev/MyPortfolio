@@ -70,15 +70,15 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      value: "+967736061504",
-      href: "tel:+15551234567",
+      value: "+967 778 219 726 / +967 736 061 504",
+      href: "tel:+967778219726",
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "Yemen-Hadramout-AL-Mukalla",
+      value: "Fuwa, Mukalla, Hadhramaut, Yemen",
       href: "#",
-    },
+    }
   ]
 
   return (

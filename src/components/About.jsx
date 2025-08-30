@@ -58,11 +58,11 @@ const About = () => {
   ]
 
   const achievements = [
-    "5+ years of frontend development experience",
-    "20+ successful projects delivered",
-    "Expert in React and modern JavaScript",
-    "Strong focus on user experience and accessibility",
-    "Proficient in responsive design and mobile-first approach",
+    "Silver Medal in a Malaysian competition for an innovative graduation-project concept",
+    "Analyzed 21K+ weekly site requests across 10+ countries to guide multilingual content improvements",
+    "Maintained positive client relationships with 15 corporate customers",
+    "Built responsive, content-rich websites with analytics and form handling",
+    "Strong focus on UX/UI, motion graphics, and continuous learning",
   ]
 
   return (
