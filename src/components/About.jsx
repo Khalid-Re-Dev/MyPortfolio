@@ -82,7 +82,7 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Description */}
           <div className="about-description">
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">{t("about.description")}</p>
+            {/* <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">{t("about.description")}</p> */}
 
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t("about.achievements")}</h3>
             <ul className="space-y-3">
