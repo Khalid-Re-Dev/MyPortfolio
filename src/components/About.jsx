@@ -1,116 +1,156 @@
-"use client"
-
 import { useEffect, useRef } from "react"
-import { Code, Palette, Zap, Award } from "lucide-react"
+import { Award } from "lucide-react"
 import { useLanguage } from "../contexts/LanguageContext"
-import { fadeInUp, staggerAnimation } from "../utils/animations"
+import { fadeInUp, staggerFadeInUp, countUp } from "../utils/animations"
+
+/* ── Static data extracted from original About.jsx ── */
+
+const SKILL_CATEGORIES = [
+  {
+    label: { en: "Frontend", ar: "تطوير الواجهات" },
+    skills: ["React", "JavaScript", "HTML5", "CSS3", "TailwindCSS"],
+  },
+  {
+    label: { en: "Design Tools", ar: "أدوات التصميم" },
+    skills: ["Figma", "Adobe XD", "Responsive Design", "User Experience"],
+  },
+  {
+    label: { en: "Performance & QA", ar: "الأداء والجودة" },
+    skills: ["SEO", "Accessibility", "Testing", "Code Review", "Optimization"],
+  },
+]
+
+const STATS = [
+  { value: 11, key: "about.stat.projects" },
+  { value: 15, key: "about.stat.clients" },
+  { value: 2, key: "about.stat.experience" },
+  { value: 1, key: "about.stat.awards" },
+]
+
+const ACHIEVEMENT_KEYS = [
+  "about.achievement.1",
+  "about.achievement.2",
+  "about.achievement.3",
+  "about.achievement.4",
+  "about.achievement.5",
+]
+
+/* ── Component ── */
 
 const About = () => {
-  const { t } = useLanguage()
-  const aboutRef = useRef(null)
+  const { t, isRTL, language } = useLanguage()
+  const sectionRef = useRef(null)
+  const animatedRef = useRef(false)
 
   useEffect(() => {
+    const section = sectionRef.current
+    if (!section) return
+
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            fadeInUp(".about-title", 0)
-            fadeInUp(".about-description", 200)
-            staggerAnimation(".skill-card", 100)
-          }
-        })
+      ([entry]) => {
+        if (entry.isIntersecting && !animatedRef.current) {
+          animatedRef.current = true
+
+          /* set initial opacity */
+          section.querySelectorAll("[data-about-anim]").forEach((el) => {
+            el.style.opacity = "0"
+          })
+
+          fadeInUp("[data-about-anim='header']", 0)
+          fadeInUp("[data-about-anim='bio']", 200)
+          fadeInUp("[data-about-anim='achievements']", 400)
+          staggerFadeInUp("[data-about-anim='skill-group']", 150, 300)
+          staggerFadeInUp("[data-about-anim='chip']", 60, 500)
+
+          /* Stats: fade in first, then count */
+          fadeInUp("[data-about-anim='stats']", 600)
+          setTimeout(() => countUp(".stat-number", 0), 800)
+        }
       },
-      { threshold: 0.1 },
+      { threshold: 0.15 },
     )
 
-    if (aboutRef.current) {
-      observer.observe(aboutRef.current)
-    }
-
+    observer.observe(section)
     return () => observer.disconnect()
   }, [])
 
-  const skills = [
-    {
-      icon: Code,
-      title: "Frontend Development",
-      description: "React, JavaScript, HTML5, CSS3, TailwindCSS",
-      color: "text-blue-600",
-    },
-    {
-      icon: Palette,
-      title: "UI/UX Design",
-      description: "Figma, Adobe XD, Responsive Design, User Experience",
-      color: "text-purple-600",
-    },
-    {
-      icon: Zap,
-      title: "Performance",
-      description: "Optimization, SEO, Accessibility, Best Practices",
-      color: "text-yellow-600",
-    },
-    {
-      icon: Award,
-      title: "Quality Assurance",
-      description: "Testing, Code Review, Documentation, Debugging",
-      color: "text-green-600",
-    },
-  ]
-
-  const achievements = [
-    "Silver Medal in a Malaysian competition for an innovative graduation-project concept",
-    "Analyzed 21K+ weekly site requests across 10+ countries to guide multilingual content improvements",
-    "Maintained positive client relationships with 15 corporate customers",
-    "Built responsive, content-rich websites with analytics and form handling",
-    "Strong focus on UX/UI, motion graphics, and continuous learning",
-  ]
-
   return (
-    <section id="about" ref={aboutRef} className="section-padding bg-white dark:bg-gray-900">
+    <section
+      id="about"
+      ref={sectionRef}
+      className="relative section-padding bg-white dark:bg-gray-900 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="about-title text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+
+        {/* ── Section Header ── */}
+        <div data-about-anim="header" className="text-center mb-14">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3">
             {t("about.title")}
           </h2>
-          <p className="about-description text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <div className="mx-auto w-20 h-1 rounded-full bg-gradient-to-r from-primary-500 to-accent-400 mb-5" />
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
             {t("about.subtitle")}
           </p>
         </div>
 
-        {/* Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          {/* Description */}
-          <div className="about-description">
-            {/* <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">{t("about.description")}</p> */}
+        {/* ── Main Two-Column Grid ── */}
+        <div className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-16 ${isRTL ? "direction-rtl" : ""}`}>
 
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t("about.achievements")}</h3>
-            <ul className="space-y-3">
-              {achievements.map((achievement, index) => (
-                <li key={index} className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-primary-900 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-600 dark:text-gray-300">{achievement}</span>
-                </li>
-              ))}
-            </ul>
+          {/* — Left: Bio + Achievements — */}
+          <div className={`${isRTL ? "lg:order-2 text-right" : "lg:order-1 text-left"}`}>
+
+            {/* Bio */}
+            <div data-about-anim="bio" className="mb-8">
+              <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                {t("about.description")}
+              </p>
+            </div>
+
+            {/* Achievements */}
+            <div data-about-anim="achievements">
+              <h3 className="flex items-center gap-2 text-xl font-bold text-gray-900 dark:text-white mb-5">
+                <Award className="w-5 h-5 text-primary-500 dark:text-accent-400 flex-shrink-0" />
+                {t("about.achievements")}
+              </h3>
+              <ul className="space-y-3">
+                {ACHIEVEMENT_KEYS.map((key) => (
+                  <li key={key} className={`flex items-start gap-3 ${isRTL ? "flex-row-reverse text-right" : ""}`}>
+                    <span className="mt-2 w-2 h-2 rounded-full bg-primary-500 dark:bg-accent-400 flex-shrink-0" />
+                    <span className="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed">
+                      {t(key)}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {/* Skills Visual */}
-          <div className="about-description">
-            <div className="bg-gradient-to-br from-primary-50 to-accent-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">{t("about.skills")}</h3>
-              <div className="space-y-4">
-                {["React", "JavaScript", "TailwindCSS", "HTML/CSS", "UI/UX Design"].map((skill, index) => (
-                  <div key={skill} className="flex items-center justify-between">
-                    <span className="text-gray-700 dark:text-gray-300 font-medium">{skill}</span>
-                    <div className="flex space-x-1">
-                      {[...Array(5)].map((_, i) => (
-                        <div
-                          key={i}
-                          className={`w-3 h-3 rounded-full ${
-                            i < (5 - index * 0.5) ? "bg-primary-900" : "bg-gray-300 dark:bg-gray-600"
-                          }`}
-                        />
+          {/* — Right: Skills — */}
+          <div className={`${isRTL ? "lg:order-1 text-right" : "lg:order-2 text-left"}`}>
+            <div className="bg-gradient-to-br from-primary-50/60 to-accent-50/60 dark:from-gray-800/80 dark:to-gray-800/40 rounded-2xl p-6 sm:p-8 border border-primary-100/50 dark:border-gray-700/50">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+                {t("about.skills")}
+              </h3>
+
+              <div className="space-y-6">
+                {SKILL_CATEGORIES.map((cat) => (
+                  <div key={cat.label.en} data-about-anim="skill-group">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-primary-600 dark:text-accent-400 mb-3">
+                      {cat.label[language] || cat.label.en}
+                    </p>
+                    <div className={`flex flex-wrap gap-2 ${isRTL ? "justify-end" : "justify-start"}`}>
+                      {cat.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          data-about-anim="chip"
+                          className="px-3 py-1.5 text-sm rounded-full border border-primary-300/60 dark:border-accent-400/30
+                            text-primary-800 dark:text-accent-200
+                            bg-white/70 dark:bg-gray-900/50
+                            hover:bg-primary-900 hover:text-white dark:hover:bg-accent-400 dark:hover:text-gray-900
+                            transition-all duration-200 cursor-default select-none"
+                        >
+                          {skill}
+                        </span>
                       ))}
                     </div>
                   </div>
@@ -120,24 +160,29 @@ const About = () => {
           </div>
         </div>
 
-        {/* Skills Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {skills.map((skill, index) => (
+        {/* ── Stats Row ── */}
+        <div data-about-anim="stats" className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {STATS.map((stat) => (
             <div
-              key={index}
-              className="skill-card card p-6 text-center group hover:bg-gradient-to-br hover:from-primary-50 hover:to-accent-50 dark:hover:from-gray-700 dark:hover:to-gray-600"
+              key={stat.key}
+              className="text-center py-6 px-4 rounded-xl bg-gray-50 dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700/40"
             >
-              <div
-                className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 dark:bg-gray-700 mb-4 group-hover:scale-110 transition-transform duration-300`}
+              <span
+                className="stat-number block text-3xl sm:text-4xl font-bold text-primary-900 dark:text-accent-300 mb-1"
+                data-target={stat.value}
               >
-                <skill.icon className={`w-8 h-8 ${skill.color}`} />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{skill.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">{skill.description}</p>
+                0
+              </span>
+              <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">
+                {t(stat.key)}
+              </span>
             </div>
           ))}
         </div>
       </div>
+
+      {/* ── Section divider ── */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-300/40 dark:via-accent-400/20 to-transparent" />
     </section>
   )
 }

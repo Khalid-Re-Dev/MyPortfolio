@@ -12,4 +12,16 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "react-vendor": ["react", "react-dom", "react-router-dom"],
+          "ui-vendor": ["lucide-react"],
+          "animation-vendor": ["animejs"],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 600,
+  },
 })

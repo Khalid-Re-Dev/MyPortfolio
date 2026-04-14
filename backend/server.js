@@ -10,6 +10,7 @@ import authRoutes from "./routes/auth.js"
 import projectRoutes from "./routes/projects.js"
 import userRoutes from "./routes/users.js"
 import analyticsRoutes from "./routes/analytics.js"
+import contactRoutes from "./routes/contact.js"
 
 dotenv.config()
 
@@ -39,12 +40,9 @@ app.use(
 app.use(express.json({ limit: "10mb" }))
 app.use(express.urlencoded({ extended: true, limit: "10mb" }))
 
-// MongoDB connection
+// MongoDB connection (Mongoose 8.x — no deprecated options needed)
 mongoose
-  .connect(process.env.MONGODB_URI || "mongodb://localhost:27017/portfolio", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(process.env.MONGODB_URI || "mongodb://localhost:27017/portfolio")
   .then(() => console.log("MongoDB connected successfully"))
   .catch((err) => console.error("MongoDB connection error:", err))
 
@@ -53,17 +51,18 @@ app.use("/api/auth", authRoutes)
 app.use("/api/projects", projectRoutes)
 app.use("/api/users", userRoutes)
 app.use("/api/analytics", analyticsRoutes)
+app.use("/api/contact", contactRoutes)
 
 // Health check endpoint
 app.get("/api/health", (req, res) => {
   res.json({
-    status: "OK",
+    status: "ok",
     timestamp: new Date().toISOString(),
     uptime: process.uptime(),
   })
 })
 
-// Error handling middleware
+// Error handling middleware (must be registered after all routes)
 app.use((err, req, res, next) => {
   console.error(err.stack)
   res.status(500).json({

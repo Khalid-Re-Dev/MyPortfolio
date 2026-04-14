@@ -5,7 +5,11 @@ const analyticsSchema = new mongoose.Schema(
     projectId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Project",
-      required: true,
+      required: false,
+    },
+    page: {
+      type: String,
+      default: "home",
     },
     userId: {
       type: mongoose.Schema.Types.ObjectId,
@@ -58,6 +62,7 @@ const analyticsSchema = new mongoose.Schema(
 analyticsSchema.index({ projectId: 1, createdAt: -1 })
 analyticsSchema.index({ userId: 1, createdAt: -1 })
 analyticsSchema.index({ action: 1, createdAt: -1 })
+analyticsSchema.index({ page: 1, createdAt: -1 })
 analyticsSchema.index({ createdAt: -1 })
 
 export default mongoose.model("Analytics", analyticsSchema)

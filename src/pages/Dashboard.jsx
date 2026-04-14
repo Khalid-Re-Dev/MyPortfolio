@@ -1,4 +1,3 @@
-"use client"
 
 import { useState, useEffect } from "react"
 import { useAuth } from "../contexts/AuthContext"
@@ -97,11 +96,10 @@ const Dashboard = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`py-2 px-1 border-b-2 font-medium text-sm flex items-center space-x-2 ${
-                  activeTab === tab.id
+                className={`py-2 px-1 border-b-2 font-medium text-sm flex items-center space-x-2 ${activeTab === tab.id
                     ? "border-primary-900 text-primary-900 dark:text-accent-300"
                     : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300"
-                }`}
+                  }`}
               >
                 <tab.icon className="w-5 h-5" />
                 <span>{tab.name}</span>
@@ -231,11 +229,10 @@ const Dashboard = () => {
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <span
-                            className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
-                              project.status === "published"
+                            className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${project.status === "published"
                                 ? "bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-300"
                                 : "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-300"
-                            }`}
+                              }`}
                           >
                             {project.status}
                           </span>
@@ -303,11 +300,10 @@ const Dashboard = () => {
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <span
-                            className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
-                              user.role === "admin"
+                            className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${user.role === "admin"
                                 ? "bg-purple-100 text-purple-800 dark:bg-purple-900/20 dark:text-purple-300"
                                 : "bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300"
-                            }`}
+                              }`}
                           >
                             {user.role}
                           </span>

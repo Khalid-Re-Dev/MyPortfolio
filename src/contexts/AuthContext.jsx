@@ -1,8 +1,8 @@
-"use client"
 
 import { createContext, useContext, useEffect, useState } from "react"
 import axios from "axios"
 import { toast } from "react-toastify"
+import api from "../utils/api"
 
 const AuthContext = createContext()
 
@@ -30,13 +30,49 @@ export const AuthProvider = ({ children }) => {
 
   const fetchUser = async () => {
     try {
-      const response = await axios.get("/api/auth/me")
+      const response = await api.get("/auth/me")
       setUser(response.data.user)
     } catch (error) {
       localStorage.removeItem("token")
       delete axios.defaults.headers.common["Authorization"]
     } finally {
       setLoading(false)
+    }
+  }
+
+  const login = async (email, password) => {
+    try {
+      const response = await api.post("/auth/login", { email, password })
+      const { token, user: userData } = response.data
+
+      localStorage.setItem("token", token)
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`
+      setUser(userData)
+      toast.success("Login successful")
+
+      return { success: true }
+    } catch (error) {
+      const message = error.response?.data?.message || "Login failed"
+      toast.error(message)
+      return { success: false, message }
+    }
+  }
+
+  const register = async (name, email, password) => {
+    try {
+      const response = await api.post("/auth/register", { name, email, password })
+      const { token, user: userData } = response.data
+
+      localStorage.setItem("token", token)
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`
+      setUser(userData)
+      toast.success("Registration successful")
+
+      return { success: true }
+    } catch (error) {
+      const message = error.response?.data?.message || "Registration failed"
+      toast.error(message)
+      return { success: false, message }
     }
   }
 
@@ -52,6 +88,8 @@ export const AuthProvider = ({ children }) => {
       value={{
         user,
         loading,
+        login,
+        register,
         logout,
         isAuthenticated: !!user,
         isAdmin: user?.role === "admin",
@@ -61,3 +99,4 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   )
 }
+

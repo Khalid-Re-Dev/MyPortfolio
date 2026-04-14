@@ -14,6 +14,7 @@ export const translations = {
     "hero.subtitle": "Motivated Front-End Developer and final-year IT student. Passionate about AI tools, motion graphics, and UX/UI. Silver Medal awardee for an innovative graduation-project concept.",
     "hero.cta": "View My Work",
     "hero.contact": "Get In Touch",
+    "hero.downloadCV": "Download CV",
 
     // About Section
     "about.title": "About Me",
@@ -23,6 +24,15 @@ export const translations = {
     "about.skills": "Technical Skills",
     "about.experience": "Experience",
     "about.achievements": "Key Achievements",
+    "about.stat.projects": "Projects",
+    "about.stat.clients": "Clients",
+    "about.stat.experience": "Years Exp.",
+    "about.stat.awards": "Awards",
+    "about.achievement.1": "Silver Medal in a Malaysian competition for an innovative graduation-project concept",
+    "about.achievement.2": "Analyzed 21K+ weekly site requests across 10+ countries to guide multilingual content improvements",
+    "about.achievement.3": "Maintained positive client relationships with 15 corporate customers",
+    "about.achievement.4": "Built responsive, content-rich websites with analytics and form handling",
+    "about.achievement.5": "Strong focus on UX/UI, motion graphics, and continuous learning",
 
     // Projects Section
     "projects.title": "Featured Projects",
@@ -38,13 +48,29 @@ export const translations = {
     "uiux.viewFigma": "View Figma",
     "uiux.viewShots": "Preview Shots",
 
-    // Contact Section
     "contact.title": "Get In Touch",
     "contact.subtitle": "Available for freelance and part-time opportunities. Based in Mukalla, Hadhramaut, Yemen",
     "contact.name": "Name",
     "contact.email": "Email",
     "contact.message": "Message",
     "contact.send": "Send Message",
+    "contact.subject": "Subject",
+    "contact.namePlaceholder": "Your name",
+    "contact.emailPlaceholder": "your.email@example.com",
+    "contact.subjectPlaceholder": "Project inquiry",
+    "contact.messagePlaceholder": "Tell me about your project...",
+    "contact.sending": "Sending...",
+    "contact.messageSent": "Message sent successfully! I'll get back to you soon.",
+    "contact.messageError": "Failed to send message. Please try again.",
+    "contact.location": "Mukalla, Hadhramaut, Yemen",
+    "contact.phone": "Phone",
+    "contact.available": "Available for new projects",
+    "contact.letsWork": "Let's Work Together",
+    "contact.letsWorkDesc": "I'm always interested in new opportunities and exciting projects. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+    "footer.rights": "All rights reserved.",
+    "footer.tagline": "UI/UX Designer & Frontend Developer",
+    "footer.quickLinks": "Quick Links",
+    "footer.connect": "Connect",
 
     // Dashboard
     "dashboard.title": "Admin Dashboard",
@@ -64,6 +90,20 @@ export const translations = {
     "common.delete": "Delete",
     "common.edit": "Edit",
     "common.close": "Close",
+
+    // Projects extras
+    "projects.showMore": "Show More",
+    "projects.showLess": "Show Less",
+    "projects.liveDemo": "Live Demo",
+    "projects.viewCode": "View Code",
+    "projects.viewFigma": "View on Figma",
+    "projects.all": "All",
+    "projects.overview": "Project Overview",
+    "projects.technicalDetails": "Technical Details",
+    "projects.designConsiderations": "Design Considerations",
+    "projects.devInsights": "Development Insights",
+    "projects.frontendTech": "Frontend Technologies",
+    "projects.backendTech": "Backend Technologies",
   },
   ar: {
     // Navigation
@@ -80,6 +120,7 @@ export const translations = {
     "hero.subtitle": "مطور واجهات أمامية وطالب سنة أخيرة في تقنية المعلومات. شغوف بأدوات الذكاء الاصطناعي والموشن جرافيك وتجربة المستخدم. حاصل على الميدالية الفضية لمشروع تخرج مبتكر.",
     "hero.cta": "اطلع على أعمالي",
     "hero.contact": "تواصل معي",
+    "hero.downloadCV": "تحميل السيرة الذاتية",
 
     // About Section
     "about.title": "نبذة عني",
@@ -89,6 +130,15 @@ export const translations = {
     "about.skills": "المهارات التقنية",
     "about.experience": "الخبرة",
     "about.achievements": "الإنجازات الرئيسية",
+    "about.stat.projects": "مشاريع",
+    "about.stat.clients": "عملاء",
+    "about.stat.experience": "سنوات خبرة",
+    "about.stat.awards": "جوائز",
+    "about.achievement.1": "الميدالية الفضية في مسابقة ماليزية لمفهوم مشروع تخرج مبتكر",
+    "about.achievement.2": "تحليل أكثر من 21 ألف طلب أسبوعي عبر 10+ دول لتوجيه تحسينات المحتوى متعدد اللغات",
+    "about.achievement.3": "بناء علاقات إيجابية مع 15 عميلاً مؤسسياً",
+    "about.achievement.4": "بناء مواقع متجاوبة وغنية بالمحتوى مع تحليلات ونماذج",
+    "about.achievement.5": "تركيز قوي على تجربة المستخدم والموشن جرافيك والتعلم المستمر",
 
     // Projects Section
     "projects.title": "المشاريع المميزة",
@@ -111,6 +161,23 @@ export const translations = {
     "contact.email": "البريد الإلكتروني",
     "contact.message": "الرسالة",
     "contact.send": "إرسال الرسالة",
+    "contact.subject": "الموضوع",
+    "contact.namePlaceholder": "اسمك",
+    "contact.emailPlaceholder": "بريدك@مثال.com",
+    "contact.subjectPlaceholder": "استفسار عن مشروع",
+    "contact.messagePlaceholder": "أخبرني عن مشروعك...",
+    "contact.sending": "جاري الإرسال...",
+    "contact.messageSent": "تم إرسال الرسالة بنجاح! سأعود إليك قريباً.",
+    "contact.messageError": "فشل إرسال الرسالة. حاول مرة أخرى.",
+    "contact.location": "المكلا، حضرموت، اليمن",
+    "contact.phone": "الهاتف",
+    "contact.available": "متاح لمشاريع جديدة",
+    "contact.letsWork": "لنعمل معاً",
+    "contact.letsWorkDesc": "أنا مهتم دائماً بالفرص الجديدة والمشاريع المثيرة. سواء كان لديك سؤال أو تريد إلقاء التحية، سأبذل قصارى جهدي للرد عليك!",
+    "footer.rights": "جميع الحقوق محفوظة.",
+    "footer.tagline": "مصمم واجهات ومطور ويب",
+    "footer.quickLinks": "روابط سريعة",
+    "footer.connect": "تواصل",
 
     // Dashboard
     "dashboard.title": "لوحة التحكم",
@@ -130,5 +197,19 @@ export const translations = {
     "common.delete": "حذف",
     "common.edit": "تعديل",
     "common.close": "إغلاق",
+
+    // Projects extras
+    "projects.showMore": "عرض المزيد",
+    "projects.showLess": "عرض أقل",
+    "projects.liveDemo": "معاينة مباشرة",
+    "projects.viewCode": "عرض الكود",
+    "projects.viewFigma": "عرض على فيغما",
+    "projects.all": "الكل",
+    "projects.overview": "نظرة عامة",
+    "projects.technicalDetails": "التفاصيل التقنية",
+    "projects.designConsiderations": "اعتبارات التصميم",
+    "projects.devInsights": "رؤى التطوير",
+    "projects.frontendTech": "تقنيات الواجهة",
+    "projects.backendTech": "تقنيات الخلفية",
   },
 }

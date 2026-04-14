@@ -103,3 +103,46 @@ export const cardLeave = (target) => {
     easing: "easeOutQuad",
   })
 }
+
+export const floatAnimation = (targets) => {
+  return anime({
+    targets,
+    translateY: [-10, 10],
+    duration: 3000,
+    easing: "easeInOutSine",
+    direction: "alternate",
+    loop: true,
+  })
+}
+
+export const staggerFadeInUp = (targets, staggerDelay = 100, startDelay = 0) => {
+  return anime({
+    targets,
+    translateY: [40, 0],
+    opacity: [0, 1],
+    duration: 800,
+    delay: anime.stagger(staggerDelay, { start: startDelay }),
+    easing: "easeOutExpo",
+  })
+}
+
+export const countUp = (targets, delay = 0) => {
+  return anime({
+    targets,
+    innerHTML: (el) => [0, el.getAttribute("data-target")],
+    round: 1,
+    duration: 2000,
+    delay,
+    easing: "easeOutExpo",
+  })
+}
+
+export const modalReveal = (targets) => {
+  return anime({
+    targets,
+    scale: [0.95, 1],
+    opacity: [0, 1],
+    duration: 400,
+    easing: "easeOutExpo",
+  })
+}

@@ -1,4 +1,3 @@
-"use client"
 
 import { createContext, useContext, useEffect, useState } from "react"
 import { translations } from "../utils/translations"
