@@ -166,8 +166,7 @@ const Hero = () => {
               <a
                 data-hero-anim="cta"
                 href="/cv.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+                download="Khalid_Badhawi_CV.pdf"
                 className="btn-secondary w-full sm:w-auto inline-flex items-center justify-center gap-2"
               >
                 <Download className="w-4 h-4" />
