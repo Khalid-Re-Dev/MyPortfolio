@@ -91,6 +91,13 @@ export const translations = {
     "common.edit": "Edit",
     "common.close": "Close",
 
+    // Auth
+    "auth.login": "Login",
+    "auth.email": "Email",
+    "auth.password": "Password",
+    "auth.loginButton": "Sign In",
+    "auth.signingIn": "Signing in...",
+
     // Projects extras
     "projects.showMore": "Show More",
     "projects.showLess": "Show Less",
@@ -197,6 +204,13 @@ export const translations = {
     "common.delete": "حذف",
     "common.edit": "تعديل",
     "common.close": "إغلاق",
+
+    // Auth
+    "auth.login": "تسجيل الدخول",
+    "auth.email": "البريد الإلكتروني",
+    "auth.password": "كلمة المرور",
+    "auth.loginButton": "تسجيل الدخول",
+    "auth.signingIn": "جاري الدخول...",
 
     // Projects extras
     "projects.showMore": "عرض المزيد",

@@ -159,4 +159,43 @@ router.get("/:id", authenticate, authorize("admin"), async (req, res) => {
   }
 })
 
+/**
+ * @route   GET /api/users
+ * @desc    List all users (admin only)
+ * @access  Protected + Admin
+ */
+router.get("/", authenticate, authorize("admin"), async (req, res) => {
+  try {
+    const users = await User.find().select("-password").sort({ createdAt: -1 })
+    res.json({ users })
+  } catch (error) {
+    console.error("List users error:", error)
+    res.status(500).json({ message: "Server error while fetching users." })
+  }
+})
+
+/**
+ * @route   DELETE /api/users/:id
+ * @desc    Delete a user (admin only, cannot delete self)
+ * @access  Protected + Admin
+ */
+router.delete("/:id", authenticate, authorize("admin"), async (req, res) => {
+  try {
+    if (req.params.id === req.user._id.toString()) {
+      return res.status(400).json({ message: "Cannot delete your own account." })
+    }
+    const user = await User.findByIdAndDelete(req.params.id)
+    if (!user) {
+      return res.status(404).json({ message: "User not found." })
+    }
+    res.json({ message: "User deleted successfully." })
+  } catch (error) {
+    if (error.kind === "ObjectId") {
+      return res.status(400).json({ message: "Invalid user ID format." })
+    }
+    console.error("Delete user error:", error)
+    res.status(500).json({ message: "Server error while deleting user." })
+  }
+})
+
 export default router

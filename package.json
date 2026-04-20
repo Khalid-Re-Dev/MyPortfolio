@@ -6,7 +6,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "vite preview"
+    "start": "vite preview",
+    "server": "cd backend && node server.js",
+    "seed": "cd backend && node scripts/seed.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
